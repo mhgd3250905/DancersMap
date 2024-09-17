@@ -71,5 +71,12 @@ class Dancer {
     return '{"age": $age, "rate": $rate, "avatar": ${avatar != null?'${json.encode(avatar)}':'null'}, "desc": ${desc != null?'${json.encode(desc)}':'null'}, "key": ${key != null?'${json.encode(key)}':'null'}, "name": ${name != null?'${json.encode(name)}':'null'}, "nick_name": ${nick_name != null?'${json.encode(nick_name)}':'null'}, "province": ${province != null?'${json.encode(province)}':'null'}, "update_time": $update_time, "photos": $photos}';
   }
 
+  String getDesc(){
+    if((desc??"").isNotEmpty){
+      return desc??"";
+    }
+    return "他还没有留下任何信息...";
+  }
+
   String toJson() => this.toString();
 }

@@ -21,7 +21,7 @@ class QueryCtrl extends GetxController {
       var formData = DIO.FormData.fromMap({
         'limit': 10,
         'cursor': dancersLive.value.cursor ?? 0,
-        'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYyODAyNDAsImlhdCI6MTcyNjE5Mzg0MCwicGFzc3dvcmQiOiIxMjMiLCJhY2NvdW50IjoiYWJjIiwicGVybWlzc2lvbnMiOltdfQ.J9tSFaa2zSFTFid2P6cJX8Z9owzzMyGJhHGXZKAGHTk'
+        'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjYzODMwNzQsImlhdCI6MTcyNjI5NjY3NCwicGFzc3dvcmQiOiIxMjMiLCJhY2NvdW50IjoiYWJjIiwicGVybWlzc2lvbnMiOltdfQ.GHmeajOrdSNu0XUlaihA9hTdkZAmruhtzzUxDAdHaiQ'
       });
 
       String url = '$BASE_HOST/dancer/query';

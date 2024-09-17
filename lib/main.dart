@@ -3,7 +3,7 @@ import 'package:dancers_map/pages/page_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-const String BASE_HOST = 'http://bboying.space';
+const String BASE_HOST = 'http://1.15.227.145';
 
 void main() {
 
