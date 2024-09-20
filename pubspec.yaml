@@ -31,14 +31,13 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.6
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   dio: ^5.7.0
   auto_animated: ^3.2.0
   flutter_card_swiper: ^7.0.1
   cached_network_image: ^3.4.1
   animated_text_kit: ^4.2.2
+  custom_refresh_indicator: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +64,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/imgs/head.jpg
+    - assets/imgs/png_error.png
+    - assets/imgs/png_arrow_up.png
+    - assets/imgs/png_warning.png
+    - assets/imgs/png_ok.png
+    - assets/imgs/png_loading.png
+    - assets/imgs/png_boy.png
+    - assets/imgs/png_girl.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -78,10 +84,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-#  fonts:
-#    - family: KuaiKan
-#      fonts:
-#        - asset: assets/fonts/kuaikan.ttf
+  fonts:
+    - family: KuaiKan
+      fonts:
+        - asset: assets/fonts/kuaikan.ttf
 #        - asset: fonts/Schyler-Italic.ttf
 #          style: italic
   #   - family: Trajan Pro

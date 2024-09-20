@@ -1,4 +1,5 @@
 import 'package:dancers_map/ctrl/ctrl_query.dart';
+import 'package:dancers_map/ctrl/ctrl_spider_dancer.dart';
 import 'package:dancers_map/pages/page_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,9 +11,9 @@ void main() {
   runApp(
     GetMaterialApp(
       home: App(),
+      theme: ThemeData(fontFamily: 'KuaiKan'),
       routingCallback: (routing) {},
       onInit: () {
-
 
       },
       builder: (context, widget) {
@@ -46,6 +47,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     Get.put(QueryCtrl());
+    Get.put(SpiderDancerCtrl());
     return const  HomePage();
   }
 }
