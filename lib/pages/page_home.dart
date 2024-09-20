@@ -84,88 +84,97 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildSliver() {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 5),
-            child: Row(
-              children: [
-                Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                      HomeCtrl.to.checkIndex.value=0;
-                      HomeCtrl.to.checkIndex.refresh();
-                    },
-                    child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          buildBboyCheckImage(),
-                          SizedBox(
-                            width: 30.0,
-                            height: 30.0,
-                            child: Image.asset(
-                              'assets/imgs/png_boy.png',
-                              fit: BoxFit.cover,
+    return Container(
+      decoration: BoxDecoration(color: Colors.black87),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        HomeCtrl.to.checkIndex.value = 0;
+                        HomeCtrl.to.checkIndex.refresh();
+                      },
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 30.0,
+                              child: buildBboyCheckImage(),
                             ),
-                          ),
-                          Container(
-                            child: Text(
-                              'Bboy',
-                              style: TextStyle(
-                                fontFamily: "KuaiKan",
-                                fontSize: 20.0,
+                            SizedBox(
+                              width: 30.0,
+                              height: 30.0,
+                              child: Image.asset(
+                                'assets/imgs/png_boy.png',
+                                fit: BoxFit.cover,
                               ),
                             ),
-                          ),
-                        ],
+                            Container(
+                              child: Text(
+                                'Bboy',
+                                style: TextStyle(
+                                  fontFamily: "KuaiKan",
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                      HomeCtrl.to.checkIndex.value=1;
-                      HomeCtrl.to.checkIndex.refresh();
-                    },
-                    child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          buildBgirlCheckImage(),
-                          SizedBox(
-                            width: 30.0,
-                            height: 30.0,
-                            child: Image.asset(
-                              'assets/imgs/png_girl.png',
-                              fit: BoxFit.cover,
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        HomeCtrl.to.checkIndex.value = 1;
+                        HomeCtrl.to.checkIndex.refresh();
+                      },
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 30.0,
+                              child: buildBgirlCheckImage(),
                             ),
-                          ),
-                          Container(
-                            child: Text(
-                              'Bgirl',
-                              style: TextStyle(
-                                fontFamily: "KuaiKan",
-                                fontSize: 20.0,
+                            SizedBox(
+                              width: 30.0,
+                              height: 30.0,
+                              child: Image.asset(
+                                'assets/imgs/png_girl.png',
+                                fit: BoxFit.cover,
                               ),
                             ),
-                          ),
-                        ],
+                            Container(
+                              child: Text(
+                                'Bgirl',
+                                style: TextStyle(
+                                  fontFamily: "KuaiKan",
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-        SliverPadding(
-          padding: const EdgeInsets.all(0.0),
-          sliver: buildMainBody(),
-        ),
-      ],
+          SliverPadding(
+            padding: const EdgeInsets.all(10.0),
+            sliver: buildMainBody(),
+          ),
+        ],
+      ),
     );
   }
 
