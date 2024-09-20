@@ -71,6 +71,8 @@ flutter:
     - assets/imgs/png_loading.png
     - assets/imgs/png_boy.png
     - assets/imgs/png_girl.png
+    - assets/imgs/png_empty.png
+    - assets/imgs/png_check.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

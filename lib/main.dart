@@ -1,3 +1,4 @@
+import 'package:dancers_map/ctrl/ctrl_home.dart';
 import 'package:dancers_map/ctrl/ctrl_query.dart';
 import 'package:dancers_map/ctrl/ctrl_spider_dancer.dart';
 import 'package:dancers_map/pages/page_home.dart';
@@ -47,6 +48,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     Get.put(QueryCtrl());
+    Get.put(HomeCtrl());
     Get.put(SpiderDancerCtrl());
     return const  HomePage();
   }

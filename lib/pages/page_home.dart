@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
+import 'package:dancers_map/ctrl/ctrl_home.dart';
 import 'package:dancers_map/ctrl/ctrl_query.dart';
 import 'package:dancers_map/ctrl/ctrl_spider_dancer.dart';
 import 'package:dancers_map/data/bean_dancers.dart';
@@ -85,12 +86,121 @@ class _HomePageState extends State<HomePage> {
   Widget buildSliver() {
     return CustomScrollView(
       slivers: [
+        SliverToBoxAdapter(
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 5),
+            child: Row(
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                    onTap: (){
+                      HomeCtrl.to.checkIndex.value=0;
+                      HomeCtrl.to.checkIndex.refresh();
+                    },
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          buildBboyCheckImage(),
+                          SizedBox(
+                            width: 30.0,
+                            height: 30.0,
+                            child: Image.asset(
+                              'assets/imgs/png_boy.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Container(
+                            child: Text(
+                              'Bboy',
+                              style: TextStyle(
+                                fontFamily: "KuaiKan",
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: (){
+                      HomeCtrl.to.checkIndex.value=1;
+                      HomeCtrl.to.checkIndex.refresh();
+                    },
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          buildBgirlCheckImage(),
+                          SizedBox(
+                            width: 30.0,
+                            height: 30.0,
+                            child: Image.asset(
+                              'assets/imgs/png_girl.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Container(
+                            child: Text(
+                              'Bgirl',
+                              style: TextStyle(
+                                fontFamily: "KuaiKan",
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
         SliverPadding(
           padding: const EdgeInsets.all(0.0),
           sliver: buildMainBody(),
         ),
       ],
     );
+  }
+
+  Widget buildBboyCheckImage() {
+    return Obx(() {
+      var index = HomeCtrl.to.checkIndex.value;
+      return Visibility(
+        visible: index == 0,
+        child: SizedBox(
+          width: 30.0,
+          height: 30.0,
+          child: Image.asset(
+            'assets/imgs/png_check.png',
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    });
+  }
+
+  Widget buildBgirlCheckImage() {
+    return Obx(() {
+      var index = HomeCtrl.to.checkIndex.value;
+      return Visibility(
+        visible: index == 1,
+        child: SizedBox(
+          width: 30.0,
+          height: 30.0,
+          child: Image.asset(
+            'assets/imgs/png_check.png',
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    });
   }
 
   Widget buildMainBody() {
