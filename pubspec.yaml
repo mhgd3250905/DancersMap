@@ -38,6 +38,7 @@ dependencies:
   cached_network_image: ^3.4.1
   animated_text_kit: ^4.2.2
   custom_refresh_indicator: ^4.0.1
+  flutter_markdown: ^0.7.3+1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,7 @@ flutter:
     - assets/imgs/png_girl.png
     - assets/imgs/png_empty.png
     - assets/imgs/png_check.png
+    - assets/markdown/test.md
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

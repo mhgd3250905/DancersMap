@@ -48,8 +48,8 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     Get.put(QueryCtrl());
-    Get.put(HomeCtrl());
     Get.put(SpiderDancerCtrl());
+    Get.put(HomeCtrl());
     return const  HomePage();
   }
 }

@@ -8,6 +8,7 @@ import 'package:dancers_map/ctrl/ctrl_spider_dancer.dart';
 import 'package:dancers_map/data/bean_dancers.dart';
 import 'package:dancers_map/data/bean_dancers_spider.dart';
 import 'package:dancers_map/network/enum_connect_state.dart';
+import 'package:dancers_map/pages/page_details.dart';
 import 'package:dancers_map/refresh/fetch_more_indicator.dart';
 import 'package:dancers_map/refresh/warp_indicator.dart';
 import 'package:flutter/material.dart';
@@ -239,7 +240,7 @@ class _HomePageState extends State<HomePage> {
               child: FetchMoreIndicator(
                 onAction: _fetchMore,
                 child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, // 每行2列
                     crossAxisSpacing: 10.0, // 列间距
                     mainAxisSpacing: 10.0, // 行间距
@@ -247,7 +248,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                   itemCount: dancers.length,
                   itemBuilder: (context, index) {
-                    return buildHiphopItem(dancers[index]!);
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(()=>DetailsPage());
+                      },
+                      child: buildHiphopItem(dancers[index]!),
+                    );
                   },
                 ),
               ),
